@@ -12,8 +12,8 @@ class AdminController extends Controller
 {
     public function dashboard() {
         $postCount = Cache::remember('post_count', 600, function() {
-    return Post::count();
-    });
+            return Post::count();
+        });
 
         
 
