@@ -15,5 +15,6 @@ html {
 }
 .animate-gradient-x {
   background-size: 200% 200%;
-  animation: gradient-x 10  s ease infinite;
+  animation: gradient-x 10s ease infinite;
 }
+

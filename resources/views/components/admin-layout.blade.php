@@ -27,7 +27,10 @@
                     class="hover:text-blue-500 {{ request()->routeIs('admin.greetings.index') ? 'text-blue-500 font-semibold' : '' }}">
                     Greetings
                 </a>
-                <a href="#" class="hover:text-blue-500">Images</a>
+                <a href="{{ route('admin.images.index') }}"
+                    class="hover:text-blue-500 {{ request()->routeIs('admin.images.index') ? 'text-blue-500 font-semibold' : '' }}">
+                    Images
+                </a>
                 <a href="#" class="hover:text-blue-500">Posts</a>
                 <form method="POST" action="{{ route('logout') }}">@csrf<button type="submit" class="hover:text-blue-500">Logout</button></form>
             </nav>
@@ -46,10 +49,13 @@
                 <!-- Mobile Menu -->
                 <div x-show="open" x-transition x-cloak class="absolute top-full right-1 mt-2 w-36 bg-white dark:bg-gray-800 shadow-lg rounded-md z-50">
                     <a href="{{ route('admin.greetings.index') }}"
-                        class="hover:text-blue-500 {{ request()->routeIs('admin.greetings.index') ? 'text-blue-500 font-semibold' : '' }}">
+                        class="hover:text-blue-500 {{ request()->routeIs('admin.greetings.index') ? 'text-blue-500 font-semibold' : '' }} block px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
                         Greetings
                     </a>
-                    <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">Images</a>
+                    <a href="{{ route('admin.images.index') }}"
+                        class="hover:text-blue-500 {{ request()->routeIs('admin.images.index') ? 'text-blue-500 font-semibold' : '' }} block px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
+                        Images
+                    </a>
                     <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">Posts</a>
                     <form method="POST" action="{{ route('logout') }}">@csrf<button type="submit" class="block px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">Logout</button></form>
                 </div>
@@ -57,7 +63,7 @@
         </div>
     </header>
     <!-- Main Content -->
-    <main class="flex-1 overflow-y-auto p-4 min-h-[60vh]">
+    <main class="p-4 min-h-[60vh]">
         {{ $slot }}
     </main>
 
@@ -101,7 +107,12 @@
                 </div>
 
                 <!-- Empty for spacing/future content -->
-                <div></div>
+                <div>
+                    <h3 class="font-semibold mb-2">Support me</h3>
+                    <ul class="space-y-1">
+                        <li><a href="https://buymeacoffee.com" target="_blank" class="hover:text-blue-500">☕ Buy me a coffee?</a></li>
+                    </ul>
+                </div>
 
                 <!-- Copyright -->
                 <div class="md:text-right">
