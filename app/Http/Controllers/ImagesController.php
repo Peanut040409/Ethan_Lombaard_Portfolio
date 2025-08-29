@@ -20,4 +20,10 @@ class ImagesController extends Controller
     public function update(Request $request, $id){
         
     }
+    public function createForm(Request $request){
+        return view('admin.images.index.forms.create');
+    }
+    public function editForm(Request $request){
+        
+    }
 }
