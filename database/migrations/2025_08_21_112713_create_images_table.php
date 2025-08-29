@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string("source");
+            $table->string("alt_text");
             $table->string("category")->nullable();
             $table->string("subtype")->nullable();
-            $table->string("alt_text");
             $table->timestamps();
         });
     }
