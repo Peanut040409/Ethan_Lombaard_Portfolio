@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="{{ asset('assets/logo/logo.png') }}" type="image/x-icon">
 </head>
-<body class="flex flex-col  h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100" x-data="{ showScroll: false }" x-init="window.addEventListener('scroll', () => { showScroll = (window.scrollY > 50) })">
+<body class="flex flex-col h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100" x-data="{ showScroll: false }" x-init="window.addEventListener('scroll', () => { showScroll = (window.scrollY > 50) })">
 
     <!-- Header -->
     <header class="bg-white dark:bg-gray-800 shadow relative" id="top">
@@ -63,7 +63,7 @@
         </div>
     </header>
     <!-- Main Content -->
-    <main class="p-4 min-h-[60vh]">
+    <main class="p-4 min-h-[60vh] h-full">
         {{ $slot }}
     </main>
 
