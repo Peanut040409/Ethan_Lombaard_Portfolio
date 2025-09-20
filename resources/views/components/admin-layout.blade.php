@@ -64,6 +64,39 @@
     </header>
     <!-- Main Content -->
     <main class="p-4 min-h-[60vh] h-full">
+            <div class="fixed left-1/2 top-10 -translate-x-1/2 z-[10000] shadow-md" x-show="display" x-data="{display:true}">
+                <div class="bg-red-500/75 w-[90vw] md:max-w-[60vw] rounded">
+                    <div class="flex justify-between items-start p-3">
+                        <!-- Content -->
+                        <div class="text-white">
+                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        </div>
+
+                        <!-- Close button -->
+                        <button @click="display = false" class="text-white hover:text-gray-200 ml-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        @if(session('red'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+        @if(session('orange'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if(session('green'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         {{ $slot }}
     </main>
 
